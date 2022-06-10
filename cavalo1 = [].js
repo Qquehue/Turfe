@@ -19,7 +19,8 @@ async function voltas () {
             await new Promise(obtenha =>{
 
                 for (let i = 1; i <= cavalos.length; i++) {
-                    var resultado = Number((Math.random() * 2 + 7).toFixed(1));
+                    var resultado = 0;
+                    resultado = Number((Math.random() * 2 + 7).toFixed(1));
 
                     if (i==1) {
                         cavalo1.push(resultado);
@@ -46,40 +47,38 @@ async function voltas () {
                         soma6 += resultado
                     }
 
-
-
                 }
                 
                 volta.innerHTML += `<h2>Volta ${emocao}</h2><br><br>`;
-                for (var numero_cavalo = 1; numero_cavalo <= cavalos.length-1; numero_cavalo++) {
+                for (var numero_cavalo = 1; numero_cavalo <= cavalos.length; numero_cavalo++) {
 
-                    if (numero_cavalo = 1) {
-                        volta.innerHTML += `${cavalo1[numero_cavalo-1]} - ${resultado} - ${soma1} <br><br>`;
+                    if (numero_cavalo == 1) {
+                        volta.innerHTML += `${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma1} <br><br>`;
                         
                     } 
-                    else if(numero_cavalo = 2){
+                    if(numero_cavalo == 2){
                         volta.innerHTML += `
-                        ${cavalo2[numero_cavalo-1]} - ${resultado} - ${soma2} <br>
+                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma2} <br>
                         <br>`;
                     }
-                    else if(numero_cavalo = 3){
+                    if(numero_cavalo == 3){
                         volta.innerHTML += `
-                        ${cavalo3[numero_cavalo-1]} - ${resultado} - ${soma3} <br>
+                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma3} <br>
                         <br>`;
                     }
-                    else if(numero_cavalo = 4){
+                    if(numero_cavalo == 4){
                         volta.innerHTML += `
-                        ${cavalo4[numero_cavalo-1]} - ${resultado} - ${soma4} <br>
+                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma4} <br>
                         <br>`;
                     }
-                    else if(numero_cavalo = 5){
+                    if(numero_cavalo == 5){
                         volta.innerHTML += `
-                        ${cavalo5[numero_cavalo-1]} - ${resultado} - ${soma5} <br>
+                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma5} <br>
                         <br>`;
                     }
-                    else if(numero_cavalo = 6){
+                    if(numero_cavalo == 6){
                         volta.innerHTML += `
-                        ${cavalo6[numero_cavalo-1]} - ${resultado} - ${soma6} <br>
+                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma6} <br>
                         <br>`;
                     }
 
@@ -88,12 +87,4 @@ async function voltas () {
             setInterval(obtenha, 6000);
         })
 }
-}
-
-
-const array = [1, 2, 3, 4];
-let sum = 0;
-
-for (let i = 0; i < array.length; i++) {
-    sum += array[i];
 }

@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Turfe Amigo</title>
-    <script src="receber_limite().js"></script>
     <script src="cavalo1 = [].js"></script>
 </head>
 
 <body>
-    <input type="number" id="quantidade_input" min="2" max="6" onkeyup="receber_limite()"><br>
+    <input type="text" id="quantidade_input" min="2" max="6" onkeyup="receber_limite()"><br>
     <input type="text" id="nome_input"><br>
     <input type="text" id="voltas_input"><br>
     <button onclick="registrar_nome()">Registre o nome do Pocotó</button>
@@ -25,6 +24,10 @@
     var quantidade_limite = 0;
     
     var cavalos = [];
+
+    function receber_limite() {
+    quantidade_limite = Number(quantidade_input.value)
+}
 
     function registrar_nome() {
         if (nome_input.value == '') {
