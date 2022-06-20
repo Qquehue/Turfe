@@ -14,77 +14,76 @@ var soma6 = Number(0);
 
 async function voltas () {
 
-        for (let emocao = 1; emocao <= voltas_input.value; emocao++) {
-            Number(emocao);
+        for (var numero_da_volta = 1; numero_da_volta <= voltas_input.value; numero_da_volta++) {
+            Number(numero_da_volta);
             await new Promise(obtenha =>{
 
-                for (let i = 1; i <= cavalos.length; i++) {
-                    var resultado = 0;
-                    resultado = Number((Math.random() * 2 + 7).toFixed(1));
+                for (let i = 1; i <= registro_de_cavalos.length; i++) {
 
                     if (i==1) {
-                        cavalo1.push(resultado);
-                        soma1 += resultado;
+                        cavalo1.push((Math.random() * 2 + 7)).toFixed(1);
+                        soma1 += Number(cavalo1[cavalo1.length-1]);
                     }
                     else if(i==2) {
-                        cavalo2.push(resultado);
-                        soma2 += resultado;
+                        cavalo2.push((Math.random() * 2 + 7)).toFixed(1);
+                        soma2 += Number(cavalo2[cavalo2.length-1]);
                     }
                     else if(i==3){
-                        cavalo3.push(resultado);
-                        soma3 += resultado
+                        cavalo3.push((Math.random() * 2 + 7)).toFixed(1);
+                        soma3 += Number(cavalo3[cavalo3.length-1]);
                     }
                     else if(i==4){
-                        cavalo4.push(resultado);
-                        soma4 += resultado
+                        cavalo4.push((Math.random() * 2 + 7)).toFixed(1);
+                        soma4 += Number(cavalo4[cavalo4.length-1]);
                     }
                     else if(i==5){
-                        cavalo5.push(resultado);
-                        soma5 += resultado
+                        cavalo5.push((Math.random() * 2 + 7)).toFixed(1);
+                        soma5 += Number(cavalo5[cavalo5.length-1]);
                     }
                     else if(i==6){
-                        cavalo6.push(resultado);
-                        soma6 += resultado
+                        cavalo6.push((Math.random() * 2 + 7)).toFixed(1);
+                        soma6 += Number(cavalo6[cavalo6.length-1]);
                     }
 
                 }
                 
-                volta.innerHTML += `<h2>Volta ${emocao}</h2><br><br>`;
-                for (var numero_cavalo = 1; numero_cavalo <= cavalos.length; numero_cavalo++) {
+                volta.innerHTML += `<h2>Volta ${numero_da_volta}</h2><br><br>`;
+                for (var numero_do_cavalo = 1; numero_do_cavalo <= registro_de_cavalos.length; numero_do_cavalo++) {
 
-                    if (numero_cavalo == 1) {
-                        volta.innerHTML += `${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma1} <br><br>`;
-                        
+                    if (numero_do_cavalo == 1) {
+                        volta.innerHTML += `
+                        ${registro_de_cavalos[numero_do_cavalo-1]} - tempo ${Number(cavalo1[numero_da_volta-1]).toFixed(1)} - soma ${Number(soma1).toFixed(1)} <br>
+                        <br>`;
                     } 
-                    if(numero_cavalo == 2){
+                    else if(numero_do_cavalo == 2){
                         volta.innerHTML += `
-                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma2} <br>
+                        ${registro_de_cavalos[numero_do_cavalo-1]} - tempo ${Number(cavalo2[numero_da_volta-1]).toFixed(1)} - soma ${Number(soma2).toFixed(1)} <br>
                         <br>`;
                     }
-                    if(numero_cavalo == 3){
+                    else if(numero_do_cavalo == 3){
                         volta.innerHTML += `
-                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma3} <br>
+                        ${registro_de_cavalos[numero_do_cavalo-1]} - tempo ${Number(cavalo3[numero_da_volta-1]).toFixed(1)} - soma ${Number(soma3).toFixed(1)} <br>
                         <br>`;
                     }
-                    if(numero_cavalo == 4){
+                    else if(numero_do_cavalo == 4){
                         volta.innerHTML += `
-                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma4} <br>
+                        ${registro_de_cavalos[numero_do_cavalo-1]} - tempo ${Number(cavalo4[numero_da_volta-1]).toFixed(1)} - soma ${Number(soma4).toFixed(1)} <br>
                         <br>`;
                     }
-                    if(numero_cavalo == 5){
+                    else if(numero_do_cavalo == 5){
                         volta.innerHTML += `
-                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma5} <br>
+                        ${registro_de_cavalos[numero_do_cavalo-1]} - tempo ${Number(cavalo5[numero_da_volta-1]).toFixed(1)} - soma ${Number(soma5).toFixed(1)} <br>
                         <br>`;
                     }
-                    if(numero_cavalo == 6){
+                    else if(numero_do_cavalo == 6){
                         volta.innerHTML += `
-                        ${cavalos[numero_cavalo-1]} - tempo ${resultado} - soma ${soma6} <br>
+                        ${registro_de_cavalos[numero_do_cavalo-1]} - tempo ${Number(cavalo6[numero_da_volta-1]).toFixed(1)} - soma ${Number(soma6).toFixed(1)} <br>
                         <br>`;
                     }
 
                 }
 
-            setInterval(obtenha, 6000);
+            setInterval(obtenha, 5000);
         })
 }
 }
